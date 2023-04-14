@@ -6,7 +6,7 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 18:56:55 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/14 22:34:47 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/04/14 22:59:18 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,10 +150,30 @@ void header()
 	print("*********************************************", "YELLOW", 1);
 }
 
+int	ft_atoi(std::string str)
+{
+	int	i;
+
+	i = 0;
+	if (!str.length())
+		return (-1);
+	if (str[i] == '+')
+		i++;
+	if (!str.length())
+	{
+		print("Invalid input.", "RED", 1);
+		return (-1);
+	}
+	if (str[i] >= '0' && str[i] <= '9')
+		return (str[i] - '0');
+	return (-1);
+}
+
 void PhoneBook::search()
 {
 	int	i;
 	std::string input;
+	int	index;
 	
 	if (!this->index)
 	{
@@ -194,4 +214,19 @@ void PhoneBook::search()
 		i++;
 	}
 	print("*********************************************", "YELLOW", 1);
+	print("INDEX: ", "BLUE", 0);
+	std::getline(std::cin, input);
+	index = ft_atoi(input);
+	if (index == -1)
+		return;
+	if (index < 1 || index > this->index)
+		print("The index is out of range.", "RED", 1);
+	else
+	{
+		std::cout << "First name: "<< this->get_fname(index - 1) << std::endl;
+		std::cout << "Last name: "<< this->get_lname(index - 1) << std::endl;
+		std::cout << "Nickname: "<< this->get_nickname(index - 1) << std::endl;
+		std::cout << "Phone numbe: "<< this->get_number(index - 1) << std::endl;
+		std::cout << "Darkest secret: "<< this->get_darkest(index - 1) << std::endl;
+	}
 }
