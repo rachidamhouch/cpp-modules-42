@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 18:02:03 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/14 19:01:10 by ramhouch         ###   ########.fr       */
+/*   Created: 2023/04/14 18:56:55 by ramhouch          #+#    #+#             */
+/*   Updated: 2023/04/14 18:58:14 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-int main()
+PhoneBook::PhoneBook()
 {
-	PhoneBook Phon;
-    std::cout<<"Hello word"<<std::endl;
-    return (0);
+	this->num = 0;
+}
+PhoneBook::~PhoneBook()
+{
 }

@@ -6,14 +6,14 @@
 #    By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/14 16:36:30 by ramhouch          #+#    #+#              #
-#    Updated: 2023/04/14 18:40:10 by ramhouch         ###   ########.fr        #
+#    Updated: 2023/04/14 19:00:25 by ramhouch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=phonebook
 CC	= g++
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98
-SRC = contact.cpp main.cpp
+SRC = contact.cpp main.cpp phonebook.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -27,5 +27,8 @@ fclean: clean
 		rm -f $(NAME) $(BONUS)
 
 re: fclean all
+
+run: all
+	./$(NAME)
 
 .PHONY: clean all fclean re
