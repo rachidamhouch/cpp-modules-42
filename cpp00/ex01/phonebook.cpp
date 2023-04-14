@@ -6,7 +6,7 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 18:56:55 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/14 21:28:24 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/04/14 22:25:56 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 PhoneBook::PhoneBook()
 {
 	this->num = 0;
+	this->empty = 1;
 }
 PhoneBook::~PhoneBook()
 {
@@ -79,7 +80,7 @@ void PhoneBook::add()
 	std::string input;
 	if (this->num == 8)
 		this->num = 0;
-	
+	this->empty = 0;
 	input = "";
 	while (input == "")
 	{
@@ -130,6 +131,66 @@ void PhoneBook::add()
 		else
 			this->set_darkest(input, this->num);
 	}
-	std::cout << this->num<<std::endl;
 	this->num += 1;
+}
+
+void header()
+{
+	print("*********************************************", "YELLOW", 1);
+	print("|", "YELLOW", 0);
+	std::cout << std::setw(10) << "Index" ;
+	print("|", "YELLOW", 0);
+	std::cout << std::setw(10) << "First name";
+	print("|", "YELLOW", 0);
+	std::cout << std::setw(10) << "Last name";
+	print("|", "YELLOW", 0);
+	std::cout << std::setw(10) << "Nickname";
+	print("|", "YELLOW", 1);
+	print("*********************************************", "YELLOW", 1);
+}
+
+void PhoneBook::search()
+{
+	int	i;
+	std::string input;
+	
+	if (this->empty)
+	{
+		print("PhoneBook is empty", "RED", 1);
+		return;
+	}
+	header();
+	i = 0;
+	while (i < this->num)
+	{
+		print("|", "YELLOW", 0);
+		std::cout << std::setw(10) << i + 1;
+		print("|", "YELLOW", 0);
+		input = this->get_fname(i);
+		if (input.length() > 10)
+		{
+			input.resize(9);
+			input.append(1, '.');
+		}
+		std::cout << std::setw(10) << input;
+		print("|", "YELLOW", 0);
+		input = this->get_lname(i);
+		if (input.length() > 10)
+		{
+			input.resize(9);
+			input.append(1, '.');
+		}
+		std::cout << std::setw(10) << input;
+		print("|", "YELLOW", 0);
+		input = this->get_nickname(i);
+		if (input.length() > 10)
+		{
+			input.resize(9);
+			input.append(1, '.');
+		}
+		std::cout << std::setw(10) << input;
+		print("|", "YELLOW", 1);
+		i++;
+	}
+	print("*********************************************", "YELLOW", 1);
 }

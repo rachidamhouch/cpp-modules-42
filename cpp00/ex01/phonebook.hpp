@@ -6,13 +6,12 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 18:43:09 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/14 21:15:53 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/04/14 22:23:51 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
-#include <iostream>
 #include "contact.hpp"
 #define RED "\033[1;31m"
 #define GREEN "\033[1;32m"
@@ -26,6 +25,7 @@ class PhoneBook
     private:
         Contact contact[8];
         int     num;
+		int		empty;
     public:
         PhoneBook();
         ~PhoneBook();
@@ -40,5 +40,6 @@ class PhoneBook
 		std::string get_number(int i);
 		std::string get_darkest(int i);
 		void	add();
+		void	search();
 };
 #endif

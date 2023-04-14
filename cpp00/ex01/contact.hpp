@@ -6,14 +6,14 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 18:23:37 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/14 18:23:38 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/04/14 22:10:15 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 #include <iostream>
-
+#include <iomanip>
 class Contact
 {
     private:

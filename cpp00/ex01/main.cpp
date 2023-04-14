@@ -6,7 +6,7 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 18:02:03 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/14 21:16:45 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/04/14 21:57:55 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int main()
         if (input == "ADD")
 			Phon.add();
         else if (input == "SEARCH")
-			std::cout << "SEARCH" << std::endl;
+			Phon.search();
 		else if (input == "EXIT")
 			return (0);
 		else
