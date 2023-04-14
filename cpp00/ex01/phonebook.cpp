@@ -6,7 +6,7 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 18:56:55 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/14 22:25:56 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/04/14 22:34:47 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 PhoneBook::PhoneBook()
 {
 	this->num = 0;
-	this->empty = 1;
+	this->index = 0;
 }
 PhoneBook::~PhoneBook()
 {
@@ -80,7 +80,6 @@ void PhoneBook::add()
 	std::string input;
 	if (this->num == 8)
 		this->num = 0;
-	this->empty = 0;
 	input = "";
 	while (input == "")
 	{
@@ -132,6 +131,8 @@ void PhoneBook::add()
 			this->set_darkest(input, this->num);
 	}
 	this->num += 1;
+	if (this->index != 8)
+		this->index = this->num;
 }
 
 void header()
@@ -154,14 +155,14 @@ void PhoneBook::search()
 	int	i;
 	std::string input;
 	
-	if (this->empty)
+	if (!this->index)
 	{
-		print("PhoneBook is empty", "RED", 1);
+		print("PhoneBook is empty.", "RED", 1);
 		return;
 	}
 	header();
 	i = 0;
-	while (i < this->num)
+	while (i < this->index)
 	{
 		print("|", "YELLOW", 0);
 		std::cout << std::setw(10) << i + 1;

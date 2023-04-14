@@ -6,7 +6,7 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 18:43:09 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/14 22:23:51 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/04/14 22:29:50 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class PhoneBook
     private:
         Contact contact[8];
         int     num;
-		int		empty;
+		int		index;
     public:
         PhoneBook();
         ~PhoneBook();

@@ -6,7 +6,7 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 18:02:03 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/14 21:57:55 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/04/14 22:32:39 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int main()
 		else if (input == "EXIT")
 			return (0);
 		else
-			print("Invalid command", "RED", 1);
+			print("Invalid command.", "RED", 1);
     }
     return (0);
 }
