@@ -6,7 +6,7 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 18:43:09 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/14 20:43:37 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/04/14 21:15:53 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #define YELLOW "\033[1;33m"
 #define BLUE "\033[1;34m"
 #define RESET "\033[1;0m"
+void	print(std::string msg, std::string color, int endl);
 
 class PhoneBook
 {
@@ -28,7 +29,6 @@ class PhoneBook
     public:
         PhoneBook();
         ~PhoneBook();
-        void    set_num(int i);
         void    set_fname(std::string fname, int i);
 		void    set_lname(std::string lname, int i);
 		void    set_nickname(std::string nickname, int i);
@@ -39,5 +39,6 @@ class PhoneBook
 		std::string get_nickname(int i);
 		std::string get_number(int i);
 		std::string get_darkest(int i);
+		void	add();
 };
 #endif

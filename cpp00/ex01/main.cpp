@@ -6,7 +6,7 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 18:02:03 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/14 20:49:57 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/04/14 21:16:45 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,14 @@ int main()
 {
 	PhoneBook Phon;
     std::string input;
+
     print("Available commands: ADD - SEARCH - EXIT", "GREEN", 1);
     while (1)
     {
 		print("~> ", "YELLOW", 0);
-        std::cin >> input;
+        std::getline(std::cin, input);
         if (input == "ADD")
-            std::cout << "ADD" << std::endl;
+			Phon.add();
         else if (input == "SEARCH")
 			std::cout << "SEARCH" << std::endl;
 		else if (input == "EXIT")
