@@ -6,7 +6,7 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 18:43:09 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/14 18:55:18 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/04/14 20:43:37 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #define PHONEBOOK_HPP
 #include <iostream>
 #include "contact.hpp"
+#define RED "\033[1;31m"
+#define GREEN "\033[1;32m"
+#define YELLOW "\033[1;33m"
+#define BLUE "\033[1;34m"
+#define RESET "\033[1;0m"
 
 class PhoneBook
 {
