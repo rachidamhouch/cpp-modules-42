@@ -6,7 +6,7 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 18:56:55 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/14 22:59:18 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/04/15 00:29:54 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ void PhoneBook::add()
 	{
 		print("First name: ", "BLUE", 0);
 		std::getline(std::cin, input);
+		if (std::cin.eof())
+			return;
 		if (input == "")
 			print("A saved contact can’t have empty fields.", "RED", 1);
 		else
@@ -95,6 +97,8 @@ void PhoneBook::add()
 	{
 		print("Last name: ", "BLUE", 0);
 		std::getline(std::cin, input);
+		if (std::cin.eof())
+			return;
 		if (input == "")
 			print("A saved contact can’t have empty fields.", "RED", 1);
 		else
@@ -105,6 +109,8 @@ void PhoneBook::add()
 	{
 		print("Nickname: ", "BLUE", 0);
 		std::getline(std::cin, input);
+		if (std::cin.eof())
+			return;
 		if (input == "")
 			print("A saved contact can’t have empty fields.", "RED", 1);
 		else
@@ -115,6 +121,8 @@ void PhoneBook::add()
 	{
 		print("Phone number: ", "BLUE", 0);
 		std::getline(std::cin, input);
+		if (std::cin.eof())
+			return;
 		if (input == "")
 			print("A saved contact can’t have empty fields.", "RED", 1);
 		else
@@ -125,6 +133,8 @@ void PhoneBook::add()
 	{
 		print("Darkest secret: ", "BLUE", 0);
 		std::getline(std::cin, input);
+		if (std::cin.eof())
+			return;
 		if (input == "")
 			print("A saved contact can’t have empty fields.", "RED", 1);
 		else

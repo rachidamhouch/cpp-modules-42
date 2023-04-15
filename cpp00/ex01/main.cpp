@@ -6,7 +6,7 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 18:02:03 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/14 22:32:39 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/04/15 00:26:37 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,11 @@ int main()
     {
 		print("~> ", "YELLOW", 0);
         std::getline(std::cin, input);
+		if (std::cin.eof())
+		{
+			std::cout << "EXIT" << std::endl;
+			return (0);
+		}
         if (input == "ADD")
 			Phon.add();
         else if (input == "SEARCH")
