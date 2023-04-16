@@ -6,13 +6,13 @@
 #    By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/14 16:36:30 by ramhouch          #+#    #+#              #
-#    Updated: 2023/04/16 21:54:52 by ramhouch         ###   ########.fr        #
+#    Updated: 2023/04/16 22:48:08 by ramhouch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=account
 CC	= g++
-CPPFLAGS=#-Wall -Wextra -Werror -std=c++98
+CPPFLAGS=-Wall -Wextra -Werror -std=c++98
 SRC = tests.cpp  Account.cpp
 OBJ = $(SRC:.cpp=.o)
 
