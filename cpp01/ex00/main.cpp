@@ -6,7 +6,7 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 17:25:08 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/18 20:44:36 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/04/18 20:51:11 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 int main()
 {
     Zombie z1, *z2;
+
+    z2 = newZombie("Rachid");
     z1.announce();
+    z2->announce();
+    delete z2;
     return (0);
 }
