@@ -6,11 +6,11 @@
 #    By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/14 16:36:30 by ramhouch          #+#    #+#              #
-#    Updated: 2023/04/18 21:12:29 by ramhouch         ###   ########.fr        #
+#    Updated: 2023/04/18 21:38:16 by ramhouch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=BraiiiiiiinnnzzzZ
+NAME=BRAIN
 CC	= g++
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98
 SRC = main.cpp
