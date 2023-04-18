@@ -6,7 +6,11 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 21:46:27 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/18 21:46:28 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/04/18 21:54:37 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
+#include <iostream>
+#endif

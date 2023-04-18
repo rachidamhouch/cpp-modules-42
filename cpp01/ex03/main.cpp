@@ -6,7 +6,14 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 21:46:23 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/18 21:46:24 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/04/18 21:55:40 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+
+int main()
+{
+    return (0);
+}
