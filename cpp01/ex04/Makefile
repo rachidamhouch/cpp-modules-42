@@ -6,14 +6,14 @@
 #    By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/14 16:36:30 by ramhouch          #+#    #+#              #
-#    Updated: 2023/04/19 03:28:23 by ramhouch         ###   ########.fr        #
+#    Updated: 2023/04/19 04:03:19 by ramhouch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=sed
+NAME=Sed
 CC	= g++
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98
-SRC = 
+SRC = main.cpp Sed.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
