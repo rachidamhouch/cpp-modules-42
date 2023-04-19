@@ -6,14 +6,14 @@
 #    By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/14 16:36:30 by ramhouch          #+#    #+#              #
-#    Updated: 2023/04/19 03:27:55 by ramhouch         ###   ########.fr        #
+#    Updated: 2023/04/19 03:28:23 by ramhouch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=Weapon
+NAME=sed
 CC	= g++
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98
-SRC = HumanA.cpp HumanB.cpp main.cpp  Weapon.cpp 
+SRC = 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
