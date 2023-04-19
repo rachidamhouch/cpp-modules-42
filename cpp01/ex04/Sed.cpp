@@ -6,7 +6,7 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 03:30:57 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/19 21:16:47 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/04/19 21:25:53 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void FtSed::replace(void)
 			pos = line.find(this->oldstring);
 		}
 		this->outfile << line;
-		this->outfile << std::endl;
+		if (!this->infile.eof())
+			this->outfile << std::endl;
 	}
 }
