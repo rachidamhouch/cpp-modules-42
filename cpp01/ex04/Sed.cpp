@@ -6,7 +6,7 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 03:30:57 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/19 06:20:09 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/04/19 06:23:08 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ oldstring(oldstring), newstring(newstring)
 	if (!this->filename.length() || !this->oldstring.length()\
 		|| !this->newstring.length() || !this->infile.good())
 	{
-		std::cout << "usage: ./sed <filename> <oldstring> <newstring>" << std::endl;
+		std::cout << "usage: ./Sed <filename> <oldstring> <newstring>" << std::endl;
 		exit(1);
 	}
 	this->outfile.open(this->new_filename.c_str());
