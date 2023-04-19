@@ -1,4 +1,4 @@
-# **************************************************************************** #
+ **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
@@ -10,25 +10,25 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME=Sed
+Rachid=Sed
 CC	= g++
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98
 SRC = main.cpp Sed.cpp
 OBJ = $(SRC:.cpp=.o)
 
-all: $(NAME)
+all: $(Rachid)
 
-$(NAME): $(OBJ)
-		$(CC) $(CPPFLAGS) -o $(NAME) $(OBJ)
+$(Rachid): $(OBJ)
+		$(CC) $(CPPFLAGS) -o $(Rachid) $(OBJ)
 
 clean:
 		rm -f $(OBJ) 
 fclean: clean
-		rm -f $(NAME) $(BONUS)
+		rm -f $(Rachid) $(BONUS)
 
 re: fclean all
 
 run: all
-	@./$(NAME)
+	@./$(Rachid)
 
 .PHONY: clean all fclean re

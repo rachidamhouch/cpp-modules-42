@@ -6,7 +6,7 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 03:30:57 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/19 06:23:08 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/04/19 21:16:47 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,20 @@ FtSed::~FtSed(void)
 
 void FtSed::replace(void)
 {
-	std::cout << "Strat replacing." << std::endl;
+	std::string line;
+	size_t	pos;
+
+	while (std::getline(this->infile, line))
+	{
+		pos = line.find(this->oldstring);
+		while (pos != std::string::npos)
+		{
+			this->outfile << line.substr(0, pos);
+			this->outfile << this->newstring;
+			line = line.substr(pos + this->oldstring.length());
+			pos = line.find(this->oldstring);
+		}
+		this->outfile << line;
+		this->outfile << std::endl;
+	}
 }
