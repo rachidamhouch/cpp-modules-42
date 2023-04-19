@@ -6,7 +6,7 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 03:30:57 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/19 04:46:49 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/04/19 06:20:09 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,22 @@
 
 FtSed::FtSed(std::string filename, std::string oldstring, std::string newstring) :
 filename(filename), new_filename(filename + ".replace"),
-oldstring(oldstring), newstring(newstring){}
+oldstring(oldstring), newstring(newstring)
+{
+	this->infile.open(this->filename.c_str());
+	if (!this->filename.length() || !this->oldstring.length()\
+		|| !this->newstring.length() || !this->infile.good())
+	{
+		std::cout << "usage: ./sed <filename> <oldstring> <newstring>" << std::endl;
+		exit(1);
+	}
+	this->outfile.open(this->new_filename.c_str());
+}
 
 FtSed::~FtSed(void)
 {
-	std::cout << "Done." << std::endl;
+	this->infile.close();
+	this->outfile.close();
 }
 
 void FtSed::replace(void)
