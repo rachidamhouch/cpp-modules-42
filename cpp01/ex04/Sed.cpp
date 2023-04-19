@@ -6,17 +6,15 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 03:30:57 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/19 04:02:42 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/04/19 04:46:49 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sed.hpp"
 
 FtSed::FtSed(std::string filename, std::string oldstring, std::string newstring) :
-filename(filename), oldstring(oldstring), newstring(newstring)
-{
-	this->new_filename = filename + ".replace";
-}
+filename(filename), new_filename(filename + ".replace"),
+oldstring(oldstring), newstring(newstring){}
 
 FtSed::~FtSed(void)
 {
