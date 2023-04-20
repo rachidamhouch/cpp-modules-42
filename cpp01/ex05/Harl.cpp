@@ -6,7 +6,7 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 03:25:21 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/04/20 03:51:19 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/04/20 04:34:56 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void Harl::complain(std::string level)
 	&Harl::error
 	};
 	std::string levels[] = {
-		"info",
 		"debug",
+		"info",
 		"warning",
 		"error"
 	};
