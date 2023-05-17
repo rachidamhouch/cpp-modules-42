@@ -1,11 +1,11 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(): Hit_points(10), Energy_points(10), Attack_damage(0), name("ClapTrap"){}
-ClapTrap::ClapTrap(int Hit_points, int Energy_points, int Attack_damage, std::string name):
-    Hit_points(Hit_points), Energy_points(Energy_points), Attack_damage(Attack_damage, name(name)) {}
+ClapTrap::ClapTrap() : name("ClapTrap"), Hit_points(10), Energy_points(10), Attack_damage(0){}
+ClapTrap::ClapTrap(std::string name, int Hit_points, int Energy_points, int Attack_damage) :
+    name(name), Hit_points(Hit_points), Energy_points(Energy_points), Attack_damage(Attack_damage) {}
 ClapTrap::ClapTrap(ClapTrap &Clap)
 {
-    this->nmae = Clap.name;
+    this->name = Clap.name;
     this->Hit_points = Clap.Hit_points;
     this->Energy_points = Clap.Energy_points;
     this->Attack_damage = Clap.Attack_damage;
@@ -14,7 +14,7 @@ ClapTrap& ClapTrap::operator=(ClapTrap &Clap)
 {
     if (this != &Clap)
     {
-        this->nmae = Clap.name;
+        this->name = Clap.name;
         this->Hit_points = Clap.Hit_points;
         this->Energy_points = Clap.Energy_points;
         this->Attack_damage = Clap.Attack_damage;
@@ -29,7 +29,7 @@ void ClapTrap::attack(const std::string& target)
 		std::cout << "ClapTrap " << this->name << " is already dead." << std::endl;
 	else if (Energy_points && Attack_damage)
 	{
-		std::cout << "ClapTrap" << name << " attacks " << target << " causing " << Attack_damage << " points of damage" << std::endl;
+		std::cout << "ClapTrap " << name << " attacks " << target << ", causing " << Attack_damage << " points of damage!" << std::endl;
         Energy_points--;
     }
 	else if (!Energy_points)
@@ -44,7 +44,7 @@ void ClapTrap::takeDamage(unsigned int amount)
     if (Hit_points < 0)
         Hit_points = 0;
 	if (Hit_points == 0)
-		std::cout << "ClapTrap " << this->name << "is dead." << std::endl;	
+		std::cout << "ClapTrap " << this->name << " is dead." << std::endl;	
 	else
 		std::cout << name << " lost " << amount << " damage points." << std::endl;
 }
