@@ -1,10 +1,17 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : name("ClapTrap"), Hit_points(10), Energy_points(10), Attack_damage(0){}
+ClapTrap::ClapTrap() : name("ClapTrap"), Hit_points(10), Energy_points(10), Attack_damage(0)
+{
+    std::cout << "ClapTrap constructor called" << std::endl;
+}
 ClapTrap::ClapTrap(std::string name, int Hit_points, int Energy_points, int Attack_damage) :
-    name(name), Hit_points(Hit_points), Energy_points(Energy_points), Attack_damage(Attack_damage) {}
+    name(name), Hit_points(Hit_points), Energy_points(Energy_points), Attack_damage(Attack_damage)
+{
+    std::cout << "ClapTrap constructor called" << std::endl;
+}
 ClapTrap::ClapTrap(ClapTrap &Clap)
 {
+    std::cout << "ClapTrap constructor called" << std::endl;
     this->name = Clap.name;
     this->Hit_points = Clap.Hit_points;
     this->Energy_points = Clap.Energy_points;
@@ -12,6 +19,7 @@ ClapTrap::ClapTrap(ClapTrap &Clap)
 }
 ClapTrap& ClapTrap::operator=(ClapTrap &Clap)
 {
+    std::cout << "ClapTrap overloading assignment operator called" << std::endl;
     if (this != &Clap)
     {
         this->name = Clap.name;
@@ -21,7 +29,10 @@ ClapTrap& ClapTrap::operator=(ClapTrap &Clap)
     }
     return (*this);
 }
-ClapTrap::~ClapTrap(){}
+ClapTrap::~ClapTrap()
+{
+    std::cout << "ClapTrap destructor called" << std::endl;
+}
 
 void ClapTrap::attack(const std::string& target)
 {
