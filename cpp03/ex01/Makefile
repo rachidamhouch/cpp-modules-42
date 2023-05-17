@@ -6,14 +6,14 @@
 #    By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/14 16:36:30 by ramhouch          #+#    #+#              #
-#    Updated: 2023/05/17 18:55:36 by ramhouch         ###   ########.fr        #
+#    Updated: 2023/05/17 20:44:09 by ramhouch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=ClapTrap
 CC	= c++
-CPPFLAGS=-Wall -Wextra -Werror -std=c++98
-SRC = main.cpp ClapTrap.cpp
+CPPFLAGS=-Wall -Wextra -Werror -std=c++98 
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
