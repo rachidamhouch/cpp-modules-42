@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/18 00:47:04 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/05/18 00:47:05 by ramhouch         ###   ########.fr       */
+/*   Created: 2023/05/18 00:48:26 by ramhouch          #+#    #+#             */
+/*   Updated: 2023/05/18 00:48:27 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-
-int main()
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+# include "ClapTrap.hpp"
+class ScavTrap : public virtual ClapTrap
 {
-    ScavTrap Clap("Rachid");
-    ScavTrap Trap("Racha");
-
-    Clap.attack("Racha");
-    Trap.takeDamage(5);
-    Trap.beRepaired(5);
-    Trap.attack("Rachid");
-    Clap.takeDamage(10);
-    Clap.guardGate();
-    return (0);
-}
+    public:
+        ScavTrap();
+        ~ScavTrap();
+        ScavTrap(const std::string &name);
+        ScavTrap(const ScavTrap &Scav);
+        ScavTrap& operator=(ScavTrap &Scav);
+        void guardGate(void);
+};
+#endif

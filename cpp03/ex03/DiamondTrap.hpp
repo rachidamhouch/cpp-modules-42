@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/18 00:46:59 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/05/18 00:47:00 by ramhouch         ###   ########.fr       */
+/*   Created: 2023/05/18 00:47:48 by ramhouch          #+#    #+#             */
+/*   Updated: 2023/05/18 00:47:49 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
-# include <iostream>
+#ifndef DIAMONDTRAP
+# define DIAMONDTRAP
+# include "FragTrap.hpp"
+# include "ScavTrap.hpp"
 
-class ClapTrap
+class DiamondTrap: public FragTrap, public ScavTrap
 {
-    protected:
+    private:
         std::string name;
-        int Hit_points;
-        int Energy_points;
-        int Attack_damage;
     public:
-        ClapTrap(void);
-        ClapTrap(std::string name);
-        ClapTrap(ClapTrap &Clap);
-        ClapTrap& operator=(ClapTrap &Clap);
-        ~ClapTrap();
+        DiamondTrap();
+        ~DiamondTrap();
+        DiamondTrap(const std::string &name);
+        DiamondTrap(const DiamondTrap &Scav);
+        DiamondTrap& operator=(DiamondTrap &Scav);
+        void whoAmI(void);
         void attack(const std::string& target);
-        void takeDamage(unsigned int amount);
-        void beRepaired(unsigned int amount);
 };
-
 #endif
