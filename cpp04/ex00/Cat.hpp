@@ -4,7 +4,7 @@
 
 class Cat : public Animal
 {
-    protected:
+    private:
 
     public:
         Cat();

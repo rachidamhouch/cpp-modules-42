@@ -4,7 +4,7 @@
 
 class WrongCat : public WrongAnimal
 {
-    protected:
+    private:
 
     public:
         WrongCat();
