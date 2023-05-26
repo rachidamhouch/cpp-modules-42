@@ -13,6 +13,6 @@ int main()
         else
             animals[i] = new Dog();
     }
-    for(int i=0; i<4; i++)
+    for(int i = 0; i < 4; i++)
         delete animals[i];
 }
