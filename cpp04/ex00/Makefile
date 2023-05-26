@@ -6,14 +6,14 @@
 #    By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/14 16:36:30 by ramhouch          #+#    #+#              #
-#    Updated: 2023/05/26 02:27:06 by ramhouch         ###   ########.fr        #
+#    Updated: 2023/05/26 03:31:20 by ramhouch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=ClapTrap
 CC	= c++
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98
-SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp
+SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
