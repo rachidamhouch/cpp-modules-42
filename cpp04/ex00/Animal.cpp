@@ -29,3 +29,8 @@ std::string Animal::getType(void) const
 {
     return (this->type);
 }
+
+void Animal::makeSound(void) const
+{
+    std::cout << "Animal made a sound." << std::endl;
+}
