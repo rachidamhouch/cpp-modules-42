@@ -10,9 +10,9 @@ class Character : public ICharacter
         std::string name;
     public:
         Character();
-        Character(std::string name);
-        Character(Character &copy);
-        Character& operator=(Character &copy);
+        Character(const std::string name);
+        Character(const Character &copy);
+        Character& operator=(const Character &copy);
         ~Character();
         std::string const & getName() const;
         void equip(AMateria* m);

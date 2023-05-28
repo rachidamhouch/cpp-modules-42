@@ -7,14 +7,14 @@ Character::Character()
         T[i] = NULL;
 }
 
-Character::Character(std::string name)
+Character::Character(const std::string name)
 {
     this->name = name;
     for (int i = 0; i < 4; i++)
         T[i] = NULL;
 }
 
-Character::Character(Character &copy)
+Character::Character(const Character &copy)
 {
     this->name = copy.name;
     delete[] T;
@@ -22,7 +22,7 @@ Character::Character(Character &copy)
         T[i] = copy.T[i];
 }
 
-Character& Character::operator=(Character &copy)
+Character& Character::operator=(const Character &copy)
 {
     if (this != &copy)
     {
