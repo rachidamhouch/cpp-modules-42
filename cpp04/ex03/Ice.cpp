@@ -2,7 +2,7 @@
 
 Ice::Ice()
 {
-    type = "default";
+    type = "ice";
 }
 Ice::Ice(const std::string type)
 {

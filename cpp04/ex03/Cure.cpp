@@ -2,7 +2,7 @@
 
 Cure::Cure()
 {
-    type = "default";
+    type = "cure";
 }
 Cure::Cure(const std::string type)
 {
