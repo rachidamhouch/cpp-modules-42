@@ -17,6 +17,7 @@ Character::Character(std::string name)
 Character::Character(Character &copy)
 {
     this->name = copy.name;
+    delete[] T;
     for (int i = 0; i < 4; i++)
         T[i] = copy.T[i];
 }
@@ -26,13 +27,17 @@ Character& Character::operator=(Character &copy)
     if (this != &copy)
     {
         this->name = copy.name;
+        delete[] T;
         for (int i = 0; i < 4; i++)
             T[i] = copy.T[i];
     }
     return (*this);
 }
 
-Character::~Character(){}
+Character::~Character()
+{
+    delete[] T;
+}
 
 std::string const & Character::getName() const
 {
@@ -56,6 +61,7 @@ void Character::unequip(int idx)
 {
     if (idx >= 0 && idx < 4 && !T[idx])
     {
+        delete T[idx];
         T[idx] = NULL;
         return ;
     }
