@@ -17,7 +17,8 @@ Character::Character(const std::string name)
 Character::Character(const Character &copy)
 {
     this->name = copy.name;
-    delete[] T;
+    for (int i = 0; i < 4; i++)
+        delete T[i];
     for (int i = 0; i < 4; i++)
         T[i] = copy.T[i];
 }
@@ -27,7 +28,8 @@ Character& Character::operator=(const Character &copy)
     if (this != &copy)
     {
         this->name = copy.name;
-        delete[] T;
+        for (int i = 0; i < 4; i++)
+            delete T[i];
         for (int i = 0; i < 4; i++)
             T[i] = copy.T[i];
     }
@@ -36,7 +38,8 @@ Character& Character::operator=(const Character &copy)
 
 Character::~Character()
 {
-    delete[] T;
+    for (int i = 0; i < 4; i++)
+        delete T[i];
 }
 
 std::string const & Character::getName() const

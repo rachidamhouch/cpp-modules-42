@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME=Animal
+NAME=AMateria
 CC	= c++
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98
 SRC = AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp main.cpp

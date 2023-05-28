@@ -19,7 +19,7 @@ Ice& Ice::operator=(const Ice &copy)
         type = copy.type;
     return (*this);
 }
-Ice* Ice::clone()
+Ice* Ice::clone() const
 {
     return (new Ice(*this));
 }

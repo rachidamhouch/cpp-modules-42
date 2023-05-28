@@ -8,7 +8,8 @@ MateriaSource::MateriaSource()
 
 MateriaSource::MateriaSource(const MateriaSource &copy)
 {
-    delete[] T;
+    for (int i = 0; i < 4; i++)
+        delete T[i];
     for (int i = 0; i < 4; i++)
         T[i] = copy.T[i];
 }
@@ -17,7 +18,8 @@ MateriaSource& MateriaSource::operator=(const MateriaSource &copy)
 {
     if (this != &copy)
     {
-        delete[] T;
+        for (int i = 0; i < 4; i++)
+            delete T[i];
         for (int i = 0; i < 4; i++)
             T[i] = copy.T[i];
     }
@@ -26,7 +28,8 @@ MateriaSource& MateriaSource::operator=(const MateriaSource &copy)
 
 MateriaSource::~MateriaSource()
 {
-    delete[] T;
+    for (int i = 0; i < 4; i++)
+        delete T[i];
 }
 
 void MateriaSource::learnMateria(AMateria* m)

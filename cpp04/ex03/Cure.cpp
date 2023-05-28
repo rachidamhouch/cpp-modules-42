@@ -19,7 +19,7 @@ Cure& Cure::operator=(const Cure &copy)
         type = copy.type;
     return (*this);
 }
-Cure* Cure::clone()
+Cure* Cure::clone() const
 {
     return (new Cure(*this));
 }
