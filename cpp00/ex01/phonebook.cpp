@@ -12,6 +12,20 @@
 
 #include "phonebook.hpp"
 
+int check(std::string input)
+{
+	int i = 0;
+
+	if (input[i] == '+')
+		i++;
+	while (input[i])
+	{
+		if (input[i] > '9' || input[i] < '0')
+			return (1);
+		i++;
+	}
+	return (0);
+}
 PhoneBook::PhoneBook()
 {
 	this->num = 0;
@@ -125,6 +139,11 @@ void PhoneBook::add()
 			return;
 		if (input == "")
 			print("A saved contact can’t have empty fields.", "RED", 1);
+		else if (check(input))
+		{
+			print("Numeric input required", "RED", 1);
+			input = "";
+		}
 		else
 			this->set_number(input, this->num);
 	}
