@@ -1,6 +1,7 @@
 #ifndef FORM_HPP
 #define FORM_HPP
 #include "Bureaucrat.hpp"
+class Bureaucrat;
 class Form
 {
     private:
@@ -14,8 +15,8 @@ class Form
         Form(const Form& copy);
         ~Form();
         Form& operator=(const Form& copy);
-        std::string getNmae(void);
-        bool <bureaucrat> signed <form>(void);
+        std::string getName(void);
+        bool getSigned(void);
         int getG_sign(void);
         int getG_execute(void);
         class GradeTooHighException : public std::exception

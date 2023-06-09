@@ -20,7 +20,7 @@ Form& Form::operator=(const Form& copy)
     }
     return (*this);
 }
-std::string Form::getNmae()
+std::string Form::getName()
 {
     return (name);
 }
@@ -38,7 +38,7 @@ int Form::getG_sign()
 }
 std::ostream& operator<<(std::ostream& out, Form &form)
 {
-    out << "Name: " << form.getNmae() << std::endl;
+    out << "Name: " << form.getName() << std::endl;
     if (form.getSigned())
         out << "Signed: Yes" << std::endl;
     else
