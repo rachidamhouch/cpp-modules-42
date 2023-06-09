@@ -15,7 +15,7 @@ class Form
         ~Form();
         Form& operator=(const Form& copy);
         std::string getNmae(void);
-        bool getSigned(void);
+        bool <bureaucrat> signed <form>(void);
         int getG_sign(void);
         int getG_execute(void);
         class GradeTooHighException : public std::exception
@@ -29,6 +29,7 @@ class Form
 				const char* what() const throw();
         };
         void beSigned(const Bureaucrat &B);
+        void setSigned(bool i);
 };
 std::ostream& operator<<(std::ostream& out, Form &form);
 #endif

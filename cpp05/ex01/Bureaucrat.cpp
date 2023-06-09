@@ -58,3 +58,14 @@ std::ostream& operator<<(std::ostream& out, const Bureaucrat &bureaucrat)
     out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << ".";
     return (out);
 }
+
+void Bureaucrat::signForm(Form &F)
+{
+    if (grade <= F.getSigned())
+    {
+        std::cout << name << " signed " << F.getName() << std::endl;
+        F.setSigned(1);
+    }
+    else
+        std::cout << name << " couldn’t sign " << F.getName() << " because Grade is too Low" << std::endl;
+}

@@ -65,3 +65,8 @@ void Form::beSigned(const Bureaucrat &B)
     else
         throw Form::GradeTooLowException();
 }
+
+void Form::setSigned(bool i)
+{
+    _signed = i;
+}
