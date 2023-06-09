@@ -18,6 +18,17 @@ class Form
         bool getSigned(void);
         int getG_sign(void);
         int getG_execute(void);
+        class GradeTooHighException : public std::exception
+        {
+            public:
+				const char* what() const throw();
+        };
+        class GradeTooLowException : public std::exception
+        {
+            public:
+				const char* what() const throw();
+        };
+        void beSigned(const Bureaucrat &B);
 };
 std::ostream& operator<<(std::ostream& out, Form &form);
 #endif

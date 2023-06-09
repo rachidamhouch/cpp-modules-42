@@ -4,8 +4,12 @@ int main()
 { 
     try
     {
-        Form a("Rachid", 1, 150);
+        Bureaucrat b("Racha", 5), c("Mohammed", 20);
+        Form a("Rachid", 10, 150);
         std::cout << a;
+        a.beSigned(b);
+        std::cout << a;
+        a.beSigned(c);
     }
     catch(const std::exception& e)
     {
@@ -13,3 +17,4 @@ int main()
     }
     std::cout << "Finish" << std::endl;
 }
+
