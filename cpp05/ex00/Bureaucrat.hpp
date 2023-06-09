@@ -27,5 +27,5 @@ class Bureaucrat
         void increment(void);
         void decrement(void);
 };
-std::iostream& operator<<(std::iostream& out, Bureaucrat &bureaucrat);
+std::ostream& operator<<(std::ostream& out, const Bureaucrat &bureaucrat);
 #endif
