@@ -38,3 +38,17 @@ std::string Bureaucrat::getName() const
 {
     return (name);
 }
+
+void Bureaucrat::increment()
+{
+    if (grade - 1 < 1)
+        throw Bureaucrat::GradeTooHighException();
+    grade -= 1;
+}
+
+void Bureaucrat::decrement()
+{
+    if (grade + 1 > 150)
+        throw Bureaucrat::GradeTooLowException();
+    grade += 1;
+}

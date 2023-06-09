@@ -5,7 +5,7 @@ int main()
     try
     {
         Bureaucrat a("Rachid", 1);
-        a.getGrade();
+        a.increment();
     }
     catch(const std::exception& e)
     {
