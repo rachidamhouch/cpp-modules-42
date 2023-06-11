@@ -42,7 +42,7 @@ int main()
     }
     try
     {
-        Bureaucrat c("Rachid", 150);
+        Bureaucrat c("Rachid", 5);
         AForm *a = new PresidentialPardonForm("Home");
         a->beSigned(c);
         c.executeForm(*a);
