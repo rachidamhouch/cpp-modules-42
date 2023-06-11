@@ -66,11 +66,11 @@ void AForm::setSigned(bool i)
 {
     _signed = i;
 }
-std::string AForm::getTarget(void)
+std::string AForm::getTarget(void) const
 {
     return (target);
 }
-void AForm::setTarget(std::string s)
+void AForm::setTarget(const std::string s)
 {
     target = s;
 }

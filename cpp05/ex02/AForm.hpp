@@ -32,8 +32,8 @@ class AForm
         };
         void beSigned(const Bureaucrat &B);
         void setSigned(bool i);
-        std::string getTarget(void);
-        void setTarget(std::string target);
+        std::string getTarget(void) const;
+        void setTarget(const std::string target);
         virtual void		execute(Bureaucrat const & executor) const = 0;
         class AFormNotSignedException: public std::exception
 		{
