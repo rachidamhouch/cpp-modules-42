@@ -40,5 +40,16 @@ int main()
     {
         std::cerr << e.what() << std::endl;
     }
+    try
+    {
+        Bureaucrat c("Rachid", 150);
+        AForm *a = new PresidentialPardonForm("Home");
+        a->beSigned(c);
+        c.executeForm(*a);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
     std::cout << "Finish" << std::endl;
 }
