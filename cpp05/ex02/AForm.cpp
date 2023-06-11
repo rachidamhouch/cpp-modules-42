@@ -20,19 +20,19 @@ AForm& AForm::operator=(const AForm& copy)
     }
     return (*this);
 }
-std::string AForm::getName()
+std::string AForm::getName() const
 {
     return (name);
 }
-bool AForm::getSigned()
+bool AForm::getSigned() const
 {
     return (_signed);
 }
-int AForm::getG_execute()
+int AForm::getG_execute() const
 {
     return (g_execute);
 }
-int AForm::getG_sign()
+int AForm::getG_sign() const
 {
     return (g_sign);
 }

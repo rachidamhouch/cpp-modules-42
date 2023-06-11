@@ -1,6 +1,7 @@
 #ifndef FORM_HPP
 #define FORM_HPP
 #include "Bureaucrat.hpp"
+#include <fstream>
 class Bureaucrat;
 class AForm
 {
@@ -16,10 +17,10 @@ class AForm
         AForm(const AForm& copy);
         ~AForm();
         AForm& operator=(const AForm& copy);
-        std::string getName(void);
-        bool getSigned(void);
-        int getG_sign(void);
-        int getG_execute(void);
+        std::string getName(void) const;
+        bool getSigned(void) const;
+        int getG_sign(void) const;
+        int getG_execute(void) const;
         class GradeTooHighException : public std::exception
         {
             public:

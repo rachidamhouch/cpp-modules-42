@@ -1,5 +1,5 @@
-#ifndef SHCFORM
-# define SHCFORM
+#ifndef SHCFORM_HPP
+# define SHCFORM_HPP
 # include "AForm.hpp"
 class ShrubberyCreationForm : public AForm
 {

@@ -1,12 +1,13 @@
-#include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 { 
     try
     {
         Bureaucrat c("Rachid", 5);
-        AForm *a = new ShrubberyCreationForm("HHH");
+        AForm *a = new PresidentialPardonForm("HHH");
+        a->beSigned(c);
         a->execute(c);
     }
     catch(const std::exception& e)
