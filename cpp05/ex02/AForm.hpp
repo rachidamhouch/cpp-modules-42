@@ -5,7 +5,8 @@ class Bureaucrat;
 class AForm
 {
     private:
-        const std::string name;
+        const std::string   name;
+        std::string 		target;
         bool _signed;
         const int g_sign;
         const int g_execute;
@@ -31,6 +32,14 @@ class AForm
         };
         void beSigned(const Bureaucrat &B);
         void setSigned(bool i);
+        std::string getTarget(void);
+        void setTarget(std::string target);
+        virtual void		execute(Bureaucrat const & executor) const = 0;
+        class AFormNotSignedException: public std::exception
+		{
+			public:
+				const char* what() const throw();
+		};
 };
 std::ostream& operator<<(std::ostream& out, AForm &form);
 #endif

@@ -47,17 +47,14 @@ std::ostream& operator<<(std::ostream& out, AForm &form)
     out << "Grade required to execute: " << form.getG_execute() << std::endl;
     return (out);
 }
-
 const char* AForm::GradeTooHighException::what() const throw()
 {
     return "Grade is too High";
 }
-
 const char* AForm::GradeTooLowException::what() const throw()
 {
     return "Grade is too Low";
 }
-
 void AForm::beSigned(const Bureaucrat &B)
 {
     if (B.getGrade() <= g_sign)
@@ -65,8 +62,19 @@ void AForm::beSigned(const Bureaucrat &B)
     else
         throw AForm::GradeTooLowException();
 }
-
 void AForm::setSigned(bool i)
 {
     _signed = i;
+}
+std::string AForm::getTarget(void)
+{
+    return (target);
+}
+void AForm::setTarget(std::string s)
+{
+    target = s;
+}
+const char* AForm::AFormNotSignedException::what() const throw()
+{
+    return "AForm is not signed";
 }
