@@ -1,11 +1,11 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm("ShrubberyCreationForm", 145, 137)
+PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5)
 {
     setTarget("Default");
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137)
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5)
 {
     setTarget(target);
 }
