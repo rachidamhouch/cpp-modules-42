@@ -7,6 +7,13 @@ int main(int ac, char **av)
        std::cout << "Error: Invalid number of arguments" << std::endl;
        return (1);
     }
-    ScalarConverter::convert(av[1]);
+    try
+    {
+        ScalarConverter::convert(av[1]);
+    }
+    catch(const char *e)
+    {
+        std::cerr << e << '\n';
+    }
     return (0);
 }
