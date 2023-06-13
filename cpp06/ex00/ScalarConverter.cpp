@@ -14,19 +14,21 @@ ScalarConverter& ScalarConverter::operator=(ScalarConverter const & copy)
 
 int ScalarConverter::check(std::string const & literal)
 {
-    int i = 0;
+    int i = 0, n = 0;
     if ((literal.length() == 3 && literal[0] == '\'' && literal[2] == '\'')
         || (literal.length() == 1 && !isdigit(literal[0])))
         return (0);
-    if (literal[i] == '-' && literal[i] == '+')
+    if (literal[i] == '-' || literal[i] == '+')
         i++;
     while (literal[i])
     {
-        if (!isdigit(literal[i]) && literal[i] != '.' && i != (int)literal.length() - 1)
+        if ((!isdigit(literal[i]) && literal[i] != '.' && i != (int)literal.length() - 1) || n > 1)
             throw "char: impossible\n\
 int: impossible\n\
 float: impossible\n\
 double: impossible";
+        if (literal[i] == '.')
+            n++;
         i++;
     }
     if (literal[i - 1] != 'f' && !isdigit(literal[i - 1]) && literal.length() > 1)
@@ -65,7 +67,9 @@ double: impossible";
 void ScalarConverter::convert(std::string const & literal)
 {
     long double n;
-    if (check(literal))
+    if (!literal[0])
+        n = 0;
+    else if (check(literal))
         n = std::stold(literal);
     else
     {
@@ -94,15 +98,17 @@ void ScalarConverter::printInt(long double n)
 
 void ScalarConverter::printChar(long double n)
 {
-    if (n > std::numeric_limits<char>::max() || n < std::numeric_limits<char>::min() || !isprint(n))
+    if (n > std::numeric_limits<char>::max() || n < std::numeric_limits<char>::min())
         std::cout << "impossible" << std::endl;
+    else if (!isprint(n))
+        std::cout << "Non displayable" << std::endl;
     else
-        std::cout << static_cast<char>(n) << std::endl;
+        std::cout <<"'"<<static_cast<char>(n) << "'" <<std::endl;
 }
 
 void ScalarConverter::printFloat(long double n)
 {
-    if (n > std::numeric_limits<float>::max() || n < std::numeric_limits<float>::min())
+    if (n > std::numeric_limits<float>::max())
         std::cout << "impossible" << std::endl;
     else
         std::cout << static_cast<float>(n) << "f" << std::endl;
@@ -110,7 +116,7 @@ void ScalarConverter::printFloat(long double n)
 
 void ScalarConverter::printDouble(long double n)
 {
-    if (n > std::numeric_limits<double>::max() || n < std::numeric_limits<double>::min())
+    if (n > std::numeric_limits<double>::max())
         std::cout << "impossible" << std::endl;
     else
         std::cout << static_cast<double>(n) << std::endl;
