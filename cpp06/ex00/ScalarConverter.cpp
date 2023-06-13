@@ -74,5 +74,32 @@ void ScalarConverter::convert(std::string const & literal)
         else
             n = static_cast<int>(literal[1]);
     }
+    std::cout << "cahr: ";
+    printChar(n);
+    std::cout << "int: ";
+    printInt(n);
+    std::cout << "float: ";
+    printFloat(n);
+    std::cout << "double: ";
+    printDouble(n);
+}
+
+void ScalarConverter::printInt(long double n)
+{
+    std::cout << n << std::endl;
+}
+
+void ScalarConverter::printChar(long double n)
+{
+    std::cout << n << std::endl;
+}
+
+void ScalarConverter::printFloat(long double n)
+{
+    std::cout << n << std::endl;
+}
+
+void ScalarConverter::printDouble(long double n)
+{
     std::cout << n << std::endl;
 }

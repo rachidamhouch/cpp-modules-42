@@ -1,6 +1,7 @@
 #ifndef SC_HPP
 # define SC_HPP
 # include <iostream>
+# include <limits>
 class ScalarConverter
 {
     private:
@@ -9,10 +10,10 @@ class ScalarConverter
 		~ScalarConverter();
 		ScalarConverter& operator=(ScalarConverter const & copy);
         static int check(std::string const & literal);
-        static void prinInt(long double n);
-        static void prinChar(long double n);
-        static void prinFloat(long double n);
-        static void prinDouble(long double n);
+        static void printInt(long double n);
+        static void printChar(long double n);
+        static void printFloat(long double n);
+        static void printDouble(long double n);
     public:
         static void	convert(std::string const & literal);
 
