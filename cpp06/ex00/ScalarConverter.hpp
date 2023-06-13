@@ -2,6 +2,7 @@
 # define SC_HPP
 # include <iostream>
 # include <limits>
+# include <math.h>
 class ScalarConverter
 {
     private:

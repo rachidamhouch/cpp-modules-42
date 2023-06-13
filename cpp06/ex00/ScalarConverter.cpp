@@ -111,7 +111,12 @@ void ScalarConverter::printFloat(long double n)
     if (n > std::numeric_limits<float>::max())
         std::cout << "impossible" << std::endl;
     else
-        std::cout << static_cast<float>(n) << "f" << std::endl;
+    {
+        if (!fmod(static_cast<float>(n), 1.0))
+            std::cout << static_cast<float>(n) << ".f" << std::endl;
+        else
+            std::cout << static_cast<float>(n) << "f" << std::endl;
+    }
 }
 
 void ScalarConverter::printDouble(long double n)
@@ -119,5 +124,10 @@ void ScalarConverter::printDouble(long double n)
     if (n > std::numeric_limits<double>::max())
         std::cout << "impossible" << std::endl;
     else
-        std::cout << static_cast<double>(n) << std::endl;
+    {
+        if (!fmod(static_cast<double>(n), 1.0))
+            std::cout << static_cast<double>(n) << ".0" << std::endl;
+        else
+            std::cout << static_cast<double>(n) << std::endl;
+    }
 }
