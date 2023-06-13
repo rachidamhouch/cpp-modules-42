@@ -8,7 +8,7 @@ class ScalarConverter
 		ScalarConverter(ScalarConverter const &copy);
 		~ScalarConverter();
 		ScalarConverter& operator=(ScalarConverter const & copy);
-        static void check(std::string const & literal);
+        static int check(std::string const & literal);
     public:
         static void	convert(std::string const & literal);
 
