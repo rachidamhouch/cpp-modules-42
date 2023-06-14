@@ -10,10 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME=Bureaucrat
+NAME=Base
 CC	= c++
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98
-SRC = main.cpp Bureaucrat.cpp
+SRC = main.cpp Base.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
