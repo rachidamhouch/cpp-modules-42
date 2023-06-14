@@ -13,7 +13,7 @@
 NAME= Serializer
 CC	= c++
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98
-SRC = main.cpp Bureaucrat.cpp
+SRC = Serializer.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

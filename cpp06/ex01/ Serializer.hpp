@@ -1,6 +1,12 @@
 #ifndef SERIALIZER_HPP
 # define SERIALIZER_HPP
 # include <iostream>
+
+struct Data {
+	int	x;
+    int y;
+};
+
 class  Serializer
 {
     private:
@@ -9,7 +15,7 @@ class  Serializer
 		~Serializer();
 		Serializer& operator=(Serializer const & copy);
     public:
-        uintptr_t serialize(Data* ptr);
-        Data* deserialize(uintptr_t raw);
+        static uintptr_t serialize(Data* ptr);
+        static Data* deserialize(uintptr_t raw);
 };
 #endif
