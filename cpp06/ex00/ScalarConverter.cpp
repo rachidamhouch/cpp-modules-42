@@ -23,19 +23,13 @@ int ScalarConverter::check(std::string const & literal)
     while (literal[i])
     {
         if ((!isdigit(literal[i]) && literal[i] != '.' && i != (int)literal.length() - 1) || n > 1)
-            throw "char: impossible\n\
-int: impossible\n\
-float: impossible\n\
-double: impossible";
+            throw 1;
         if (literal[i] == '.')
             n++;
         i++;
     }
     if (literal[i - 1] != 'f' && !isdigit(literal[i - 1]) && literal.length() > 1)
-        throw "char: impossible\n\
-int: impossible\n\
-float: impossible\n\
-double: impossible";
+        throw 1;
     try
     {
         std::stoi(literal);
@@ -54,10 +48,7 @@ double: impossible";
             }
             catch(const std::exception& e)
             {
-                throw "char: impossible\n\
-int: impossible\n\
-float: impossible\n\
-double: impossible";
+                throw 1;
             }
         }
     }
