@@ -3,6 +3,7 @@
 # include <iostream>
 # include <limits>
 # include <math.h>
+# include <string>
 class ScalarConverter
 {
     private:
@@ -15,6 +16,7 @@ class ScalarConverter
         static void printChar(long double n);
         static void printFloat(long double n);
         static void printDouble(long double n);
+        static void help(std::string const & literal);
     public:
         static void	convert(std::string const & literal);
 

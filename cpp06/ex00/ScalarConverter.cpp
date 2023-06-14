@@ -55,9 +55,16 @@ int ScalarConverter::check(std::string const & literal)
     return (1);
 }
 
-void ScalarConverter::convert(std::string const & literal)
+void ScalarConverter::help(std::string const & literal)
 {
     long double n;
+
+    if (!strcmp(literal.c_str(), "+inf") || !strcmp(literal.c_str(), "+inff"))
+        throw 2;
+    if (!strcmp(literal.c_str(), "-inf") || !strcmp(literal.c_str(), "-inff"))
+        throw 3;
+    if (!strcmp(literal.c_str(), "nanf") || !strcmp(literal.c_str(), "nan"))
+        throw 4;
     if (!literal[0])
         n = 0;
     else if (check(literal))
@@ -85,6 +92,43 @@ void ScalarConverter::printInt(long double n)
         std::cout << "impossible" << std::endl;
     else
         std::cout << static_cast<int>(n) << std::endl;
+}
+void ScalarConverter::convert(std::string const & literal)
+{
+    try
+    {
+        ScalarConverter::help(literal);
+    }
+    catch(int a)
+    {
+        if (a == 1)
+        {
+            std::cout << "char: impossible" << std::endl;
+            std::cout << "int: impossible" << std::endl;
+            std::cout << "float: impossible" << std::endl;
+            std::cout << "double: impossible" << std::endl;
+        }
+        else
+        {
+            std::cout << "char: impossible" << std::endl;
+            std::cout << "int: impossible" << std::endl;
+            if (a == 2)
+            {
+                std::cout << "float: +inff" << std::endl;
+                std::cout << "double: +inf" << std::endl;
+            }
+            else if (a == 3)
+            {
+                std::cout << "float: -inff" << std::endl;
+                std::cout << "double: -inf" << std::endl;
+            }
+            else
+            {
+                std::cout << "float: nanf" << std::endl;
+                std::cout << "double: nan" << std::endl;
+            }
+        }
+    }
 }
 
 void ScalarConverter::printChar(long double n)
