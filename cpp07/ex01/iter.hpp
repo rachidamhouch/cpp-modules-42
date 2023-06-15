@@ -20,8 +20,8 @@ void print(T &a)
 }
 
 template <class T>
-void increment(T &a)
+void modify(T &a)
 {
-    a++;
+    a *= 2;
 }
 #endif
