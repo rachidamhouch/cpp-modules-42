@@ -1,6 +1,7 @@
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
 # include <iostream>
+# include <stdexcept>
 
 template <class T>
 class Array
@@ -13,22 +14,10 @@ class Array
         Array(const unsigned int n);
         Array(Array<T> const &copy);
         Array<T>& operator=(Array<T> const &copy);
-        T& operator[](const unsigned int n) const;
+        T& operator[](const unsigned int m) const;
         ~Array();
-        class	OutOfRangeException: public std::exception
-		{
-			public:
-				const char* what() const throw();
-		};
         unsigned int size() const;
 };
-
-template <class T>
-const char* Array<T>::OutOfRangeException::what() const throw()
-{
-    return "Index is out of range";
-}
-
 template <class T>
 Array<T>::Array()
 {
@@ -39,6 +28,7 @@ Array<T>::Array()
 template <class T>
 Array<T>::Array(const unsigned int n)
 {
+    this->n = n;
     array = new T[n];
     for (unsigned int i = 0; i < n; i++)
         array[i] = i;
@@ -49,6 +39,8 @@ Array<T>& Array<T>::operator=(Array<T> const &copy)
 {
     if (this != &copy)
     {
+        n = copy.n;
+        delete[] array;
         array = new T[copy.n];
         for (unsigned int i = 0; i < n; i++)
             array[i] = copy[i];
@@ -57,16 +49,17 @@ Array<T>& Array<T>::operator=(Array<T> const &copy)
 }
 
 template <class T>
-T& Array<T>::operator[](const unsigned int n) const
+T& Array<T>::operator[](const unsigned int m) const
 {
-    if (n >= this->n)
-        throw Array<T>::OutOfRangeException();
-    return (array[n]);
+    if (m >= n || m < 0)
+        throw std::out_of_range("index is out of bounds");
+    return (array[m]);
 }
 
 template <class T>
 Array<T>::Array(Array<T> const &copy)
 {
+    n = copy.n;
     array = new T[copy.n];
     for (unsigned int i = 0; i < n; i++)
         array[i] = copy[i];
