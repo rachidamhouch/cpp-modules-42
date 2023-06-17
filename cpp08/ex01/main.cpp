@@ -32,6 +32,7 @@ void test2()
         sp.addNumbers(T.begin(), T.end());
         std::cout << sp.shortestSpan() << std::endl;
         std::cout << sp.longestSpan() << std::endl;
+        sp.addNumber(11);
     }
     catch(const std::exception &e)
     {
