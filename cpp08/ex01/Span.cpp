@@ -30,10 +30,18 @@ int Span::shortestSpan()
 
     std::sort(Data.begin(), Data.end());
     min = *(it + 1) - *it;
-    for (;it != Data.end(); it++)
+    for (;it != Data.end() - 1; ++it)
     {
         if (*(it + 1) - *it < min)
             min = *(it + 1) - *it;
     }
     return (min);
+}
+
+void Span::addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+    if (N - Data.size() < static_cast<unsigned int>(std::distance(begin, end)))
+        throw std::out_of_range("Space not enough!");
+    for (; begin < end; ++begin)
+        addNumber(*begin);
 }
