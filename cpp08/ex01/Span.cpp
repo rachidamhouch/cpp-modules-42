@@ -2,7 +2,7 @@
 
 Span::Span() : N(0) {}
 Span::Span(unsigned int n) : N(n) {}
-Span::Span(Span const &copy) : N(copy.N) {}
+Span::Span(Span const &copy) : N(copy.N){}
 Span& Span::operator=(Span const &copy)
 {
     if (this != &copy)
@@ -19,6 +19,8 @@ void Span::addNumber(int n)
 
 int Span::longestSpan()
 {
+    if (Data.size() < 2)
+        throw std::out_of_range("here are no numbers stored, or only one"); 
     std::sort(Data.begin(), Data.end());
     return (Data.back() - Data.front());
 }
@@ -28,6 +30,8 @@ int Span::shortestSpan()
     std::vector<int>::iterator	it = Data.begin();
     int min;
 
+    if (Data.size() < 2)
+        throw std::out_of_range("here are no numbers stored, or only one"); 
     std::sort(Data.begin(), Data.end());
     min = *(it + 1) - *it;
     for (;it != Data.end() - 1; ++it)
