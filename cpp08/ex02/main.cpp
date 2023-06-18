@@ -22,5 +22,16 @@ int main()
         std::cout << *it << std::endl;
         ++it;
     }
+    std::cout << "==================" << std::endl;
+    MutantStack<int>::const_iterator cit = mstack1.begin();
+    MutantStack<int>::const_iterator cite = mstack1.end();
+    ++cit;
+    --cit;
+    while (cit != cite)
+    {
+        std::cout << *cit << std::endl;
+        ++cit;
+    }
+    std::stack<int> s(mstack);
     return (0);
 }
