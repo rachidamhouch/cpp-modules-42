@@ -9,8 +9,13 @@ class MutantStack : public std::stack<T, Container>
  
     public:
         MutantStack(){}
-        MutantStack(MutantStack<T> const &copy);
-        MutantStack<T>& operator=(MutantStack<T> const &copy);
+        MutantStack(MutantStack<T> const &copy) : std::stack<T, Container>(copy) {};
+        MutantStack<T>& operator=(MutantStack<T> const &copy)
+		{
+			if (this != & copy)
+				std::stack<T, Container>::operator=(copy);
+			return (*this);
+		}
         ~MutantStack(){}
 		typedef typename Container::iterator	iterator;
 		typedef typename Container::const_iterator	c_iterator;
