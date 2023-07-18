@@ -88,6 +88,18 @@ void PhoneBook::set_darkest(std::string darkest, int i)
 	this->contact[i].set_darkest(darkest);
 }
 
+int is_valid(std::string input)
+{
+	int i = 0;
+
+	while (input[i])
+	{
+		if (input[i] != ' ' && input[i] != '\t')
+			return (0);
+		i++;
+	}
+	return (1);
+}
 //tools
 void PhoneBook::add()
 {
@@ -95,49 +107,49 @@ void PhoneBook::add()
 	if (this->num == 8)
 		this->num = 0;
 	input = "";
-	while (input == "")
+	while (is_valid(input))
 	{
 		print("First name: ", "BLUE", 0);
 		std::getline(std::cin, input);
 		if (std::cin.eof())
 			return;
-		if (input == "")
+		if (is_valid(input))
 			print("A saved contact can’t have empty fields.", "RED", 1);
 		else
 			this->set_fname(input, this->num);
 	}
 	input = "";
-	while (input == "")
+	while (is_valid(input))
 	{
 		print("Last name: ", "BLUE", 0);
 		std::getline(std::cin, input);
 		if (std::cin.eof())
 			return;
-		if (input == "")
+		if (is_valid(input))
 			print("A saved contact can’t have empty fields.", "RED", 1);
 		else
 			this->set_lname(input, this->num);
 	}
 	input = "";
-	while (input == "")
+	while (is_valid(input))
 	{
 		print("Nickname: ", "BLUE", 0);
 		std::getline(std::cin, input);
 		if (std::cin.eof())
 			return;
-		if (input == "")
+		if (is_valid(input))
 			print("A saved contact can’t have empty fields.", "RED", 1);
 		else
 			this->set_nickname(input, this->num);
 	}
 	input = "";
-	while (input == "")
+	while (is_valid(input))
 	{
 		print("Phone number: ", "BLUE", 0);
 		std::getline(std::cin, input);
 		if (std::cin.eof())
 			return;
-		if (input == "")
+		if (is_valid(input))
 			print("A saved contact can’t have empty fields.", "RED", 1);
 		else if (check(input))
 		{
@@ -148,13 +160,13 @@ void PhoneBook::add()
 			this->set_number(input, this->num);
 	}
 	input = "";
-	while (input == "")
+	while (is_valid(input))
 	{
 		print("Darkest secret: ", "BLUE", 0);
 		std::getline(std::cin, input);
 		if (std::cin.eof())
 			return;
-		if (input == "")
+		if (is_valid(input))
 			print("A saved contact can’t have empty fields.", "RED", 1);
 		else
 			this->set_darkest(input, this->num);
