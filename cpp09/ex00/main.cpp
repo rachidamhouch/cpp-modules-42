@@ -101,7 +101,11 @@ void out_put(std::map<std::string, float> &DATA, char *infile)
             else if (std::stoi(second) > 1000)
                 std::cerr << "Error: too large a number." << std::endl;
             else
-                std::cout << first << "+" << second << std::endl;
+            {
+                std::map<std::string, float>::iterator it = DATA.lower_bound(first);
+                std::cout << it->second *  std::stoi(second)<< std::endl;
+            }
+
         }
         catch(const std::exception& e)
         {
