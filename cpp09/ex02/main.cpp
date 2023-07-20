@@ -16,6 +16,85 @@ bool is_valid(char *str)
     }
     return true;
 }
+std::deque<int> insertDeq(std::deque<int> &Tab)
+{
+    int n = Tab.size();
+
+    for (int i = 1; i < n; ++i)
+    {
+        int key = Tab[i];
+        int j = i - 1;
+
+        while (j >= 0 && Tab[j] > key)
+        {
+            Tab[j + 1] = Tab[j];
+            j--;
+        }
+        Tab[j + 1] = key;
+    }
+    return (Tab);
+}
+
+std::deque<int> mergeDeq(std::deque<int> &Tab)
+{
+    unsigned long i = 0, n = 0, t = 0;
+    std::deque<int> left, right;
+
+    if (Tab.size() > 100)
+    {
+        while (i < Tab.size() / 2)
+        {
+            left.push_back(Tab[i]);
+            i++;
+        }
+        while (i < Tab.size())
+        {
+            right.push_back(Tab[i]);
+            i++;
+        }
+        left = mergeDeq(left);
+        right = mergeDeq(right);
+    }
+    else
+        return (insertDeq(Tab));
+    i = 0;
+    while(i < left.size() && n < right.size())
+    {
+        if (left[i] < right[n])
+        {
+            Tab[t] = left[i];
+            i++;
+            t++;
+        }
+        else
+        {
+            Tab[t] = right[n];
+            n++;
+            t++;
+        }
+    }
+    while(i < left.size())
+    {
+        Tab[t] = left[i];
+        i++;
+        t++;
+    }
+    while(n < right.size())
+    {
+        Tab[t] = right[n];
+        n++;
+        t++;
+    }
+    return (Tab);
+}
+
+float mergeInserDeq(std::deque<int> &Tab)
+{
+    std::clock_t start = std::clock();
+    mergeDeq(Tab);
+    std::clock_t end = std::clock();
+    return (static_cast<double>(end - start) / CLOCKS_PER_SEC * 1000000.0);
+}
 
 std::vector<int> insertVec(std::vector<int> &Tab)
 {
@@ -116,15 +195,9 @@ int main(int ac, char **av)
             exit (1);
         }
         Vec.push_back(atoi(av[i]));
-        (void)(Deq);
+        Deq.push_back(atoi(av[i]));
         i++;
     }
-    mergeInserVec(Vec);
-    i = 0;
-    while (i < Vec.size())
-    {
-        std::cout << Vec[i] << std::endl;
-        i++;
-    }
+    mergeInserDeq(Deq);
     return (0);
 }
