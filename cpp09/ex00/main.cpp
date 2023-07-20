@@ -1,8 +1,6 @@
 #include <iostream>
 #include <map>
 #include <fstream>
-#include <sstream>
-
 
 void get_data(std::map<std::string, float> &DATA)
 {
@@ -138,7 +136,6 @@ void out_put(std::map<std::string, float> &DATA, char *infile)
                 else
                     std::cout << first << " => " <<  second << " = " << (--it)->second *  std::stof(second)<< std::endl;
             }
-
         }
         catch(const std::exception& e)
         {
