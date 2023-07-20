@@ -85,6 +85,31 @@ bool check_input(const std::string &line)
     return true;
 }
 
+bool is_num(const std::string &str)
+{
+    int i = 0, count = 0;
+
+    if (!str[0])
+        return false;
+    if (str[i] == '+' || str[i] == '-')
+        i++;
+    while (str[i])
+    {
+        if ((str[i] > '9' || str[i] < '0') && str[i] != '.')
+            return false;
+        if (str[i] == '.')
+        {
+            if (i == 0 || (i == 1 && (str[0] == '+' || str[0] == '-') ))
+                return false;
+            count++;
+        }
+        i++;
+    }
+    if ((i == 1 && (str[0] == '+' || str[0] == '-')) || count > 1)
+        return false;
+    return true;
+}
+
 void out_put(std::map<std::string, float> &DATA, char *infile)
 {
     (void)DATA;
@@ -122,7 +147,7 @@ void out_put(std::map<std::string, float> &DATA, char *infile)
                 second = line.substr(pos + 2, line.length());
             else
                 error = 1;
-            if (error || !isValidDate(first))
+            if (error|| !is_num(second) || !isValidDate(first))
                 std::cerr << "Error: bad input => " << line << std::endl;
             else if (std::stof(second) < 0)
                 std::cerr << "Error: not a positive number." << std::endl;
