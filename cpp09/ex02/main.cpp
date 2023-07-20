@@ -19,18 +19,19 @@ bool is_valid(char *str)
 
 std::vector<int> insertVec(std::vector<int> &Tab)
 {
-    unsigned long i = 0, tmp;
+    int n = Tab.size();
 
-    while (i < Tab.size() - 1)
+    for (int i = 1; i < n; ++i)
     {
-        if (Tab[i] > Tab[i + 1])
+        int key = Tab[i];
+        int j = i - 1;
+
+        while (j >= 0 && Tab[j] > key)
         {
-            tmp = Tab[i];
-            Tab[i] = Tab[i + 1];
-            Tab[i + 1] = tmp;
-            i = -1;
+            Tab[j + 1] = Tab[j];
+            j--;
         }
-        i++;
+        Tab[j + 1] = key;
     }
     return (Tab);
 }
