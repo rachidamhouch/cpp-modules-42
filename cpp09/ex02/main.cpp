@@ -178,6 +178,7 @@ float mergeInserVec(std::vector<int> &Tab)
 
 int main(int ac, char **av)
 {
+    float v,d;
     unsigned long int i = 1;
     std::vector<int> Vec;
     std::deque<int> Deq;
@@ -198,6 +199,25 @@ int main(int ac, char **av)
         Deq.push_back(atoi(av[i]));
         i++;
     }
-    mergeInserDeq(Deq);
+    std::cout << "Before: ";
+    i = 0;
+    while (i < Vec.size())
+    {
+        std::cout << Vec[i] << " ";
+        i++;
+    }
+    std::cout << std::endl;
+    d = mergeInserDeq(Deq);
+    v = mergeInserVec(Vec);
+    std::cout << "After: ";
+    i = 0;
+    while (i < Vec.size())
+    {
+        std::cout << Vec[i] << " ";
+        i++;
+    }
+    std::cout << std::endl;
+    std::cout << "Time to process a range of "<< Vec.size() <<" elements with std::vector : "<< v <<" us" << std::endl;
+    std::cout << "Time to process a range of "<< Vec.size() <<" elements with std::deque : "<< d <<" us" << std::endl;
     return (0);
 }
