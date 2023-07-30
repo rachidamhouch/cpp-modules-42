@@ -2,7 +2,7 @@
 
 void test1()
 {
-    Span sp = Span(5);
+    Span sp(5);
     try
     {
         sp.addNumber(6);
@@ -23,9 +23,9 @@ void test1()
 void test2()
 {
     std::vector<int> T(10000);
-    std::vector<int>::iterator begin = T.begin(), end = T.end();
-    Span sp = Span(10000);
-    for(int i = 1; begin < end; ++begin, i++)
+    std::vector<int>::iterator begin = T.begin();
+    Span sp(10000);
+    for(int i = 1; begin < T.end(); ++begin, i++)
         *begin = i;
     try
     {

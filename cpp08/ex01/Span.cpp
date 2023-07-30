@@ -2,11 +2,14 @@
 
 Span::Span() : N(0) {}
 Span::Span(unsigned int n) : N(n) {}
-Span::Span(Span const &copy) : N(copy.N){}
+Span::Span(Span const &copy) : N(copy.N), Data(copy.Data){}
 Span& Span::operator=(Span const &copy)
 {
     if (this != &copy)
+    {
+        Data = copy.Data;
         N = copy.N;
+    }
     return (*this);
 }
 
